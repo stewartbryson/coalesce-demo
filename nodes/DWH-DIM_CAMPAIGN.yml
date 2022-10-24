@@ -1,0 +1,782 @@
+steps:
+  DIM_CAMPAIGN-1594:
+    operation:
+      config:
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18287
+              stepCounter: "1594"
+            config: {}
+            dataType: NUMBER
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSurrogateKey: true
+            name: DIM_CAMP_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - columnReference:
+              columnCounter: 18288
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: METADATA$FILENAME
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18243
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18289
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ActualCost
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18244
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18290
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: AmountAllOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18245
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18291
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: AmountWonOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18246
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18292
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: BudgetedCost
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18247
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18293
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: CampaignMemberRecordTypeId
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18248
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18294
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: CreatedById
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18249
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18295
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: CreatedDate
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18250
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18296
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: Description
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18251
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18297
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: EndDate
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18252
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18298
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ExpectedResponse
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18253
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18299
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ExpectedRevenue
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18254
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18300
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyActualCost
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18255
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18301
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyAmountAllOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18256
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18302
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyAmountWonOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18257
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18303
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyBudgetedCost
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18258
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18304
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyExpectedRevenue
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18259
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18305
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberOfContacts
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18260
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18306
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberOfConvertedLeads
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18261
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18307
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberOfLeads
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18262
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18308
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberOfOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18263
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18309
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberOfResponses
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18264
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18310
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberOfWonOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18265
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18311
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: HierarchyNumberSent
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18266
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18312
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            isBusinessKey: true
+            name: Id
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18267
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18313
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: IsActive
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18268
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18314
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: IsDeleted
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18269
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18315
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LastActivityDate
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18270
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18316
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LastModifiedById
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18271
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18317
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LastModifiedDate
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18272
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18318
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: Name
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18273
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18319
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberOfContacts
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18274
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18320
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberOfConvertedLeads
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18275
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18321
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberOfLeads
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18276
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18322
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberOfOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18277
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18323
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberOfResponses
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18278
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18324
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberOfWonOpportunities
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18279
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18325
+              stepCounter: "1594"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NumberSent
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18280
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18326
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: OwnerId
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18281
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18327
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ParentId
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18282
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18328
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: StartDate
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18283
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18329
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: Status
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18284
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18330
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SystemModstamp
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18285
+                    stepCounter: "1593"
+                transform: ""
+          - columnReference:
+              columnCounter: 18331
+              stepCounter: "1594"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: Type
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18286
+                    stepCounter: "1593"
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18332
+              stepCounter: "1594"
+            config: {}
+            dataType: NUMBER
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemVersion: true
+            name: SYSTEM_VERSION
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18333
+              stepCounter: "1594"
+            config: {}
+            dataType: VARCHAR
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemCurrentFlag: true
+            name: SYSTEM_CURRENT_FLAG
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18334
+              stepCounter: "1594"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemStartDate: true
+            name: SYSTEM_START_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18335
+              stepCounter: "1594"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemEndDate: true
+            name: SYSTEM_END_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18336
+              stepCounter: "1594"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemCreateDate: true
+            name: SYSTEM_CREATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 18337
+              stepCounter: "1594"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemUpdateDate: true
+            name: SYSTEM_UPDATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              STG_CAMPAIGN: "1593"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: STAGE
+                nodeName: STG_CAMPAIGN
+            join:
+              joinCondition: FROM {{ ref('STAGE', 'STG_CAMPAIGN') }} "STG_CAMPAIGN"
+            name: DIM_CAMPAIGN
+            noLinkRefs: []
+      name: DIM_CAMPAIGN
+      overrideSQL: false
+      schema: ""
+      sqlType: Dimension
+      type: sql
+    stepCounter: "1594"

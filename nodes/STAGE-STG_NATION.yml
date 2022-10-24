@@ -1,0 +1,112 @@
+steps:
+  STG_NATION-56:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      dependencies: []
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: 2
+      locationName: STAGE
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 588
+              stepCounter: 56
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6345
+                    stepCounter: "557"
+                transform: ""
+          - columnReference:
+              columnCounter: 589
+              stepCounter: 56
+            dataType: VARCHAR(25)
+            description: ""
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6346
+                    stepCounter: "557"
+                transform: ""
+          - columnReference:
+              columnCounter: 590
+              stepCounter: 56
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6347
+                    stepCounter: "557"
+                transform: ""
+          - columnReference:
+              columnCounter: 591
+              stepCounter: 56
+            dataType: VARCHAR(152)
+            description: ""
+            name: N_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6348
+                    stepCounter: "557"
+                transform: UPPER("NATION"."N_COMMENT")
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 757
+              stepCounter: "56"
+            config: {}
+            dataType: STRING
+            defaultValue: ""
+            description: ""
+            hashDetails:
+              hashAlgorithm: SHA1
+            hashedColumns:
+              - columnCounter: 589
+                stepCounter: "56"
+              - columnCounter: 590
+                stepCounter: "56"
+              - columnCounter: 591
+                stepCounter: "56"
+            name: GH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases: {}
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: SOURCE
+                nodeName: NATION
+            join:
+              joinCondition: "FROM {{ ref('SOURCE', 'NATION') }} \"NATION\"\r\nORDER BY NATION.N_NATIONKEY"
+            name: STG_NATION
+            noLinkRefs: []
+      name: STG_NATION
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: "56"
