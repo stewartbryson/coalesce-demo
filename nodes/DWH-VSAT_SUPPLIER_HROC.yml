@@ -1,0 +1,134 @@
+steps:
+  VSAT_SUPPLIER_HROC-1649:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 19034
+              stepCounter: "1649"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18859
+                    stepCounter: "1635"
+                transform: ""
+          - columnReference:
+              columnCounter: 19035
+              stepCounter: "1649"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18850
+                    stepCounter: "1635"
+                transform: ""
+          - columnReference:
+              columnCounter: 19036
+              stepCounter: "1649"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18855
+                    stepCounter: "1635"
+                transform: ""
+          - columnReference:
+              columnCounter: 19037
+              stepCounter: "1649"
+            dataType: VARCHAR(101)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18856
+                    stepCounter: "1635"
+                transform: ""
+          - columnReference:
+              columnCounter: 19038
+              stepCounter: "1649"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPLIER_HASH_HROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18860
+                    stepCounter: "1635"
+                transform: ""
+          - columnReference:
+              columnCounter: 19039
+              stepCounter: "1649"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18862
+                    stepCounter: "1635"
+                transform: ""
+          - columnReference:
+              columnCounter: 19040
+              stepCounter: "1649"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: RECORD_SOURCE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18863
+                    stepCounter: "1635"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: SAT_SUPPLIER_HROC
+            join:
+              joinCondition: FROM {{ ref('DWH', 'SAT_SUPPLIER_HROC') }} "SAT_SUPPLIER_HROC"
+            name: VSAT_SUPPLIER_HROC
+            noLinkRefs: []
+      name: VSAT_SUPPLIER_HROC
+      overrideSQL: false
+      schema: ""
+      sqlType: "44"
+      type: sql
+    stepCounter: "1649"
