@@ -532,16 +532,6 @@ stepTypes:
             isRequired: true
 
           - type: multisourceToggle
-          
-          - displayName: Multi Source Strategy
-            attributeName: insertStrategy
-            type: dropdownSelector
-            default: UNION
-            options:
-            - "UNION"
-            - "UNION ALL" 
-            isRequired: true
-            enableIf: "{% if node.isMultisource %} true {% else %} false {% endif %}"
 
 
         - groupName: Pre/Post SQL
@@ -596,11 +586,10 @@ stepTypes:
             		{{ config.preSQL }}
             	{% endif %}
 
-
-            	{{ stage('Merge Hub') }}
-            	MERGE INTO {{ ref_no_link(node.location.name, node.name) }} "TGT" USING
-            	(
-            		{% for source in sources %}
+            	{% for source in sources %}
+            		{{ stage(source.name) }}
+            		MERGE INTO {{ ref_no_link(node.location.name, node.name) }} "TGT" USING
+            		(
             		SELECT DISTINCT
             		{% for col in source.columns %}
                         {{ get_source_transform(col) }} AS "{{ col.name }}"
@@ -609,34 +598,30 @@ stepTypes:
 
             		{{ source.join }}
 
-            		{% if not loop.last %}
-            			{{ config.insertStrategy }}
-            		{% endif %}
-            	{% endfor %}
-            	)
-            	AS "SRC"
-            	ON
-            	{% for col in sources[0].columns if (col.isHubHash) -%}
-            		{% if not loop.first %}
-            			AND
-            		{% endif %}
-            		"SRC"."{{ col.name }}" = "TGT"."{{ col.name }}"
-            	{% endfor %}
-            	WHEN NOT MATCHED THEN
-            	INSERT
-            	(
-            		{% for col in columns %}
-            			"{{ col.name }}"
-            			{%- if not loop.last -%}, {% endif %}
+            		)
+            		AS "SRC"
+            		ON
+            		{% for col in sources[0].columns if (col.isHubHash) -%}
+            			{% if not loop.first %}
+            				AND
+            			{% endif %}
+            			"SRC"."{{ col.name }}" = "TGT"."{{ col.name }}"
             		{% endfor %}
-            	) VALUES
-            	(
-            		{% for col in columns %}
-            			"SRC"."{{ col.name }}"
-            			{%- if not loop.last -%}, {% endif %}
-            		{% endfor %}
-            	)
-
+            		WHEN NOT MATCHED THEN
+            		INSERT
+            		(
+            			{% for col in columns %}
+            				"{{ col.name }}"
+            				{%- if not loop.last -%}, {% endif %}
+            			{% endfor %}
+            		) VALUES
+            		(
+            			{% for col in columns %}
+            				"SRC"."{{ col.name }}"
+            				{%- if not loop.last -%}, {% endif %}
+            			{% endfor %}
+            		)
+            	{% endfor %}
 
             	{% if config.postSQL %}
             		{{ stage('Post-SQL') }}
@@ -2601,7 +2586,8 @@ stepTypes:
                     {{ source.join }}
                     
                     QUALIFY 1 = ROW_NUMBER() OVER (PARTITION BY 
-                    {% for col in source.columns if col.name.endswith("_KEY") %}
+                    {% for col in source.columns if col.name.endswith("_KEY") %} {% endfor %}
+                    {% for col in sources[0].columns if (col.isHubHash) %}
                         {{ get_source_transform(col) }} {%- if not loop.last -%}, {% endif %}
                     {% endfor %}
                     ORDER BY "LOAD_DATE")
@@ -4683,12 +4669,12 @@ stepTypes:
 subgraphs:
   Subgraph-36:
     id: 36
-    name: New Sub-Graph
+    name: Dim Part
     steps:
       - "1656"
   Subgraph-37:
     id: 37
-    name: New Sub-Graph
+    name: Dim Customer
     steps:
       - "1659"
   Subgraph-7:
