@@ -4681,6 +4681,16 @@ stepTypes:
     name: Persistent Stage
     version: 1
 subgraphs:
+  Subgraph-36:
+    id: 36
+    name: New Sub-Graph
+    steps:
+      - "1656"
+  Subgraph-37:
+    id: 37
+    name: New Sub-Graph
+    steps:
+      - "1659"
   Subgraph-7:
     id: 7
     name: Dim Supplier
@@ -4697,4 +4707,5 @@ subgraphs:
       - "1533"
       - "1534"
       - "1604"
+      - "1652"
 version: 1

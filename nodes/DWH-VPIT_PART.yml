@@ -1,0 +1,220 @@
+steps:
+  VPIT_PART-1655:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 19123
+              stepCounter: "1655"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_PART_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18966
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19124
+              stepCounter: "1655"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_PARTKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18967
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19227
+              stepCounter: "1655"
+            dataType: VARCHAR(55)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18968
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19228
+              stepCounter: "1655"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_MFGR
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18969
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19229
+              stepCounter: "1655"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_BRAND
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18970
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19230
+              stepCounter: "1655"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_TYPE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18971
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19231
+              stepCounter: "1655"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_SIZE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18972
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19232
+              stepCounter: "1655"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_CONTAINER
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18973
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19233
+              stepCounter: "1655"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_RETAILPRICE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18974
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19234
+              stepCounter: "1655"
+            dataType: VARCHAR(23)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18975
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19235
+              stepCounter: "1655"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_PART_HASH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18976
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19134
+              stepCounter: "1655"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18977
+                    stepCounter: "1644"
+                transform: ""
+          - columnReference:
+              columnCounter: 19135
+              stepCounter: "1655"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: RECORD_SOURCE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18978
+                    stepCounter: "1644"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              VSAT_PART: "1644"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: VSAT_PART
+            join:
+              joinCondition: FROM {{ ref('DWH', 'VSAT_PART') }} "VSAT_PART"
+            name: VPIT_PART
+            noLinkRefs: []
+      name: VPIT_PART
+      overrideSQL: false
+      schema: ""
+      sqlType: View
+      type: sql
+    stepCounter: "1655"

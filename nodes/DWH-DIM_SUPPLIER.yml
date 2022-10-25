@@ -1,0 +1,263 @@
+steps:
+  DIM_SUPPLIER-1652:
+    operation:
+      config:
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 19063
+              stepCounter: "1652"
+            config: {}
+            dataType: NUMBER
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSurrogateKey: true
+            name: DIM_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - columnReference:
+              columnCounter: 19065
+              stepCounter: "1652"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            isBusinessKey: true
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19061
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19074
+              stepCounter: "1652"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19239
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19075
+              stepCounter: "1652"
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ADDRESS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19240
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19076
+              stepCounter: "1652"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19241
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19077
+              stepCounter: "1652"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19242
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19078
+              stepCounter: "1652"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19243
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19079
+              stepCounter: "1652"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19244
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19080
+              stepCounter: "1652"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19236
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19081
+              stepCounter: "1652"
+            dataType: VARCHAR(101)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19237
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19064
+              stepCounter: "1652"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19060
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19066
+              stepCounter: "1652"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE_LROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19050
+                    stepCounter: "1650"
+                transform: ""
+          - columnReference:
+              columnCounter: 19067
+              stepCounter: "1652"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE_HROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19062
+                    stepCounter: "1650"
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 19072
+              stepCounter: "1652"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemCreateDate: true
+            name: SYSTEM_CREATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 19073
+              stepCounter: "1652"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemUpdateDate: true
+            name: SYSTEM_UPDATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              VPIT_SUPPLIER: "1650"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: VPIT_SUPPLIER
+            join:
+              joinCondition: |
+                FROM {{ ref('DWH', 'VPIT_SUPPLIER') }} "VPIT_SUPPLIER"
+            name: DIM_SUPPLIER
+            noLinkRefs: []
+      name: DIM_SUPPLIER
+      overrideSQL: false
+      schema: ""
+      sqlType: Dimension
+      type: sql
+    stepCounter: "1652"

@@ -1,0 +1,245 @@
+steps:
+  VPIT_SUPPLIER-1650:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 19060
+              stepCounter: "1650"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18644
+                    stepCounter: "1621"
+                transform: ""
+          - columnReference:
+              columnCounter: 19061
+              stepCounter: "1650"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18635
+                    stepCounter: "1621"
+                transform: ""
+          - columnReference:
+              columnCounter: 19239
+              stepCounter: "1650"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18981
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19240
+              stepCounter: "1650"
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ADDRESS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18982
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19241
+              stepCounter: "1650"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18983
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19242
+              stepCounter: "1650"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18984
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19243
+              stepCounter: "1650"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18985
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19244
+              stepCounter: "1650"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18986
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19245
+              stepCounter: "1650"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPLIER_HASH_LROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18987
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19050
+              stepCounter: "1650"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE_LROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18988
+                    stepCounter: "1645"
+                transform: ""
+          - columnReference:
+              columnCounter: 19236
+              stepCounter: "1650"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19036
+                    stepCounter: "1649"
+                transform: ""
+          - columnReference:
+              columnCounter: 19237
+              stepCounter: "1650"
+            dataType: VARCHAR(101)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19037
+                    stepCounter: "1649"
+                transform: ""
+          - columnReference:
+              columnCounter: 19238
+              stepCounter: "1650"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPLIER_HASH_HROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19038
+                    stepCounter: "1649"
+                transform: ""
+          - columnReference:
+              columnCounter: 19062
+              stepCounter: "1650"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE_HROC
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19039
+                    stepCounter: "1649"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              HUB_SUPPLIER: "1621"
+              VSAT_SUPPLIER_HROC: "1649"
+              VSAT_SUPPLIER_LROC: "1645"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: HUB_SUPPLIER
+              - locationName: DWH
+                nodeName: VSAT_SUPPLIER_LROC
+              - locationName: DWH
+                nodeName: VSAT_SUPPLIER_HROC
+            join:
+              joinCondition: |-
+                FROM {{ ref('DWH', 'HUB_SUPPLIER') }} "HUB_SUPPLIER"
+                LEFT JOIN {{ ref('DWH', 'VSAT_SUPPLIER_LROC') }} "VSAT_SUPPLIER_LROC"
+                ON "HUB_SUPPLIER"."H_SUPPLIER_KEY" = "VSAT_SUPPLIER_LROC"."H_SUPPLIER_KEY"
+                LEFT JOIN {{ ref('DWH', 'VSAT_SUPPLIER_HROC') }} "VSAT_SUPPLIER_HROC"
+                ON "HUB_SUPPLIER"."H_SUPPLIER_KEY" = "VSAT_SUPPLIER_HROC"."H_SUPPLIER_KEY"
+            name: VPIT_SUPPLIER
+            noLinkRefs: []
+      name: VPIT_SUPPLIER
+      overrideSQL: false
+      schema: ""
+      sqlType: View
+      type: sql
+    stepCounter: "1650"

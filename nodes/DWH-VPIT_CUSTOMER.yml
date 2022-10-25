@@ -1,0 +1,234 @@
+steps:
+  VPIT_CUSTOMER-1658:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 19170
+              stepCounter: "1658"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_CUSTOMER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19156
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19171
+              stepCounter: "1658"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_CUSTKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19157
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19246
+              stepCounter: "1658"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19158
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19247
+              stepCounter: "1658"
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_ADDRESS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19159
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19248
+              stepCounter: "1658"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19160
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19249
+              stepCounter: "1658"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19161
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19250
+              stepCounter: "1658"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19162
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19251
+              stepCounter: "1658"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_MKTSEGMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19163
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19252
+              stepCounter: "1658"
+            dataType: VARCHAR(117)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: C_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19164
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19253
+              stepCounter: "1658"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19165
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19254
+              stepCounter: "1658"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19166
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19255
+              stepCounter: "1658"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_CUSTOMER_HASH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19167
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19182
+              stepCounter: "1658"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19168
+                    stepCounter: "1657"
+                transform: ""
+          - columnReference:
+              columnCounter: 19183
+              stepCounter: "1658"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: RECORD_SOURCE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19169
+                    stepCounter: "1657"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              VSAT_CUSTOMER: "1657"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: VSAT_CUSTOMER
+            join:
+              joinCondition: FROM {{ ref('DWH', 'VSAT_CUSTOMER') }} "VSAT_CUSTOMER"
+            name: VPIT_CUSTOMER
+            noLinkRefs: []
+      name: VPIT_CUSTOMER
+      overrideSQL: false
+      schema: ""
+      sqlType: View
+      type: sql
+    stepCounter: "1658"

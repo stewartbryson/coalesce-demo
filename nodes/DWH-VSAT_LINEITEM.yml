@@ -1,0 +1,344 @@
+steps:
+  VSAT_LINEITEM-1646:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 18990
+              stepCounter: "1646"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_ORDER_LINE_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18805
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18991
+              stepCounter: "1646"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_ORDER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18803
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18992
+              stepCounter: "1646"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_PART_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18804
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18993
+              stepCounter: "1646"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_ORDERKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18787
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18994
+              stepCounter: "1646"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_PARTKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18788
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18995
+              stepCounter: "1646"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18789
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18996
+              stepCounter: "1646"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_LINENUMBER
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18790
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18997
+              stepCounter: "1646"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_QUANTITY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18791
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18998
+              stepCounter: "1646"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_EXTENDEDPRICE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18792
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 18999
+              stepCounter: "1646"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_DISCOUNT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18793
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19000
+              stepCounter: "1646"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_TAX
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18794
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19001
+              stepCounter: "1646"
+            dataType: VARCHAR(1)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_RETURNFLAG
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18795
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19002
+              stepCounter: "1646"
+            dataType: VARCHAR(1)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_LINESTATUS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18796
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19003
+              stepCounter: "1646"
+            dataType: DATE
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_SHIPDATE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18797
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19004
+              stepCounter: "1646"
+            dataType: DATE
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_COMMITDATE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18798
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19005
+              stepCounter: "1646"
+            dataType: DATE
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_RECEIPTDATE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18799
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19006
+              stepCounter: "1646"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_SHIPINSTRUCT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18800
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19007
+              stepCounter: "1646"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_SHIPMODE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18801
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19008
+              stepCounter: "1646"
+            dataType: VARCHAR(44)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_COMMENT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18802
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19009
+              stepCounter: "1646"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LS_ORDER_LINE_HASH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18806
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19010
+              stepCounter: "1646"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18807
+                    stepCounter: "1631"
+                transform: ""
+          - columnReference:
+              columnCounter: 19011
+              stepCounter: "1646"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: RECORD_SOURCE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18808
+                    stepCounter: "1631"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: LSAT_LINEITEM
+            join:
+              joinCondition: FROM {{ ref('DWH', 'LSAT_LINEITEM') }} "LSAT_LINEITEM"
+            name: VSAT_LINEITEM
+            noLinkRefs: []
+      name: VSAT_LINEITEM
+      overrideSQL: false
+      schema: ""
+      sqlType: "44"
+      type: sql
+    stepCounter: "1646"

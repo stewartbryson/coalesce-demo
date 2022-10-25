@@ -1,0 +1,220 @@
+steps:
+  VPIT_ORDERS-1653:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 19082
+              stepCounter: "1653"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: H_ORDER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19012
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19083
+              stepCounter: "1653"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_ORDERKEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19013
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19256
+              stepCounter: "1653"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_CUSTKEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19014
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19257
+              stepCounter: "1653"
+            dataType: VARCHAR(1)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_ORDERSTATUS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19015
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19258
+              stepCounter: "1653"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_TOTALPRICE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19016
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19259
+              stepCounter: "1653"
+            dataType: DATE
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_ORDERDATE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19017
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19260
+              stepCounter: "1653"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_ORDERPRIORITY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19018
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19261
+              stepCounter: "1653"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_CLERK
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19019
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19262
+              stepCounter: "1653"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_SHIPPRIORITY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19020
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19263
+              stepCounter: "1653"
+            dataType: VARCHAR(79)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: O_COMMENT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19021
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19264
+              stepCounter: "1653"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LS_ORDER_CUSTOMER_HASH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19022
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19093
+              stepCounter: "1653"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19023
+                    stepCounter: "1647"
+                transform: ""
+          - columnReference:
+              columnCounter: 19094
+              stepCounter: "1653"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: RECORD_SOURCE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 19024
+                    stepCounter: "1647"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              VSAT_ORDERS: "1647"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: VSAT_ORDERS
+            join:
+              joinCondition: FROM {{ ref('DWH', 'VSAT_ORDERS') }} "VSAT_ORDERS"
+            name: VPIT_ORDERS
+            noLinkRefs: []
+      name: VPIT_ORDERS
+      overrideSQL: false
+      schema: ""
+      sqlType: View
+      type: sql
+    stepCounter: "1653"
