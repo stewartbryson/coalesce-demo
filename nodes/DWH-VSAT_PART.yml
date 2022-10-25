@@ -201,7 +201,9 @@ steps:
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - customSQL:
+          - aliases:
+              SAT_PART: "1633"
+            customSQL:
               customSQL: ""
             dependencies:
               - locationName: DWH
