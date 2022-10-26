@@ -1,0 +1,162 @@
+steps:
+  VSAT_PARTSUPP-1648:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 19025
+              stepCounter: "1648"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: L_SUPPLIER_PART_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18844
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19026
+              stepCounter: "1648"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PS_PARTKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18837
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19027
+              stepCounter: "1648"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PS_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18838
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19028
+              stepCounter: "1648"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PS_AVAILQTY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18839
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19029
+              stepCounter: "1648"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PS_SUPPLYCOST
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18840
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19030
+              stepCounter: "1648"
+            dataType: VARCHAR(199)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PS_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18841
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19031
+              stepCounter: "1648"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LS_SUPPLIER_PART_HASH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18845
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19032
+              stepCounter: "1648"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: LOAD_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18846
+                    stepCounter: "1634"
+                transform: ""
+          - columnReference:
+              columnCounter: 19033
+              stepCounter: "1648"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: RECORD_SOURCE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 18847
+                    stepCounter: "1634"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: LSAT_PARTSUPP
+            join:
+              joinCondition: FROM {{ ref('DWH', 'LSAT_PARTSUPP') }} "LSAT_PARTSUPP"
+            name: VSAT_PARTSUPP
+            noLinkRefs: []
+      name: VSAT_PARTSUPP
+      overrideSQL: false
+      schema: ""
+      sqlType: "44"
+      type: sql
+    stepCounter: "1648"

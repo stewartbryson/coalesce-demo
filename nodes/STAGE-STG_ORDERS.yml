@@ -24,8 +24,6 @@ steps:
               stepCounter: "1617"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_ORDERKEY
             nullable: true
             sourceColumnReferences:
@@ -38,8 +36,6 @@ steps:
               stepCounter: "1617"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_CUSTKEY
             nullable: true
             sourceColumnReferences:
@@ -52,8 +48,6 @@ steps:
               stepCounter: "1617"
             dataType: VARCHAR(1)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_ORDERSTATUS
             nullable: false
             sourceColumnReferences:
@@ -66,8 +60,6 @@ steps:
               stepCounter: "1617"
             dataType: NUMBER(12,2)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_TOTALPRICE
             nullable: false
             sourceColumnReferences:
@@ -80,8 +72,6 @@ steps:
               stepCounter: "1617"
             dataType: DATE
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_ORDERDATE
             nullable: false
             sourceColumnReferences:
@@ -94,8 +84,6 @@ steps:
               stepCounter: "1617"
             dataType: VARCHAR(15)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_ORDERPRIORITY
             nullable: false
             sourceColumnReferences:
@@ -108,8 +96,6 @@ steps:
               stepCounter: "1617"
             dataType: VARCHAR(15)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_CLERK
             nullable: false
             sourceColumnReferences:
@@ -122,8 +108,6 @@ steps:
               stepCounter: "1617"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_SHIPPRIORITY
             nullable: false
             sourceColumnReferences:
@@ -136,8 +120,6 @@ steps:
               stepCounter: "1617"
             dataType: VARCHAR(79)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: O_COMMENT
             nullable: false
             sourceColumnReferences:
@@ -156,7 +138,6 @@ steps:
             dataType: STRING
             defaultValue: ""
             description: ""
-            hashColumns: []
             hashDetails:
               hashAlgorithm: SHA1
             hashedColumns:
@@ -178,7 +159,6 @@ steps:
             dataType: STRING
             defaultValue: ""
             description: ""
-            hashColumns: []
             hashDetails:
               hashAlgorithm: SHA1
             hashedColumns:
@@ -200,7 +180,6 @@ steps:
             dataType: STRING
             defaultValue: ""
             description: ""
-            hashColumns: []
             hashDetails:
               hashAlgorithm: SHA1
             hashedColumns:
@@ -224,7 +203,6 @@ steps:
             dataType: STRING
             defaultValue: ""
             description: ""
-            hashColumns: []
             hashDetails:
               hashAlgorithm: SHA1
             hashedColumns:
