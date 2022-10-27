@@ -155,7 +155,7 @@ steps:
             description: ""
             hashColumns: []
             hashDetails: null
-            name: S_ADDRESS1
+            name: S_ADDRESS2
             nullable: false
             sourceColumnReferences:
               - columnReferences:

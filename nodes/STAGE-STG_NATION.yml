@@ -9,6 +9,7 @@ steps:
         truncateBefore: true
       database: ""
       dependencies: []
+      deployEnabled: true
       description: ""
       isDataVault: false
       isMultisource: false
