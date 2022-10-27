@@ -27,8 +27,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18818
-                    stepCounter: "1632"
+                  - columnCounter: 18693
+                    stepCounter: "1624"
                 transform: ""
           - columnReference:
               columnCounter: 19013
@@ -41,8 +41,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18809
-                    stepCounter: "1632"
+                  - columnCounter: 18684
+                    stepCounter: "1624"
                 transform: ""
           - columnReference:
               columnCounter: 19014
@@ -202,14 +202,20 @@ steps:
         enabledColumnTestIDs: []
         sourceMapping:
           - aliases:
+              HUB_ORDERS: "1624"
               SAT_ORDERS: "1632"
             customSQL:
               customSQL: ""
             dependencies:
               - locationName: DWH
+                nodeName: HUB_ORDERS
+              - locationName: DWH
                 nodeName: SAT_ORDERS
             join:
-              joinCondition: FROM {{ ref('DWH', 'SAT_ORDERS') }} "SAT_ORDERS"
+              joinCondition: |-
+                FROM {{ ref('DWH', 'HUB_ORDERS') }} "HUB_ORDERS"
+                INNER JOIN {{ ref('DWH', 'SAT_ORDERS') }} "SAT_ORDERS"
+                ON "HUB_ORDERS"."H_ORDER_KEY"= "SAT_ORDERS"."H_ORDER_KEY"
             name: VSAT_ORDERS
             noLinkRefs: []
       name: VSAT_ORDERS

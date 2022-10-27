@@ -27,8 +27,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18769
-                    stepCounter: "1629"
+                  - columnCounter: 18644
+                    stepCounter: "1621"
                 transform: ""
           - columnReference:
               columnCounter: 18980
@@ -41,8 +41,8 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18760
-                    stepCounter: "1629"
+                  - columnCounter: 18635
+                    stepCounter: "1621"
                 transform: ""
           - columnReference:
               columnCounter: 18981
@@ -174,14 +174,20 @@ steps:
         enabledColumnTestIDs: []
         sourceMapping:
           - aliases:
+              HUB_SUPPLIER: "1621"
               SAT_SUPPLIER_LROC: "1629"
             customSQL:
               customSQL: ""
             dependencies:
               - locationName: DWH
+                nodeName: HUB_SUPPLIER
+              - locationName: DWH
                 nodeName: SAT_SUPPLIER_LROC
             join:
-              joinCondition: FROM {{ ref('DWH', 'SAT_SUPPLIER_LROC') }} "SAT_SUPPLIER_LROC"
+              joinCondition: |
+                FROM {{ ref('DWH', 'HUB_SUPPLIER') }} "HUB_SUPPLIER"
+                INNER JOIN {{ ref('DWH', 'SAT_SUPPLIER_LROC') }} "SAT_SUPPLIER_LROC"
+                ON "HUB_SUPPLIER"."H_SUPPLIER_KEY" = "SAT_SUPPLIER_LROC"."H_SUPPLIER_KEY"
             name: VSAT_SUPPLIER_LROC
             noLinkRefs: []
       name: VSAT_SUPPLIER_LROC

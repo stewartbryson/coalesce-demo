@@ -27,8 +27,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18783
-                    stepCounter: "1630"
+                  - columnCounter: 18658
+                    stepCounter: "1622"
                 transform: ""
           - columnReference:
               columnCounter: 19157
@@ -41,8 +41,8 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18773
-                    stepCounter: "1630"
+                  - columnCounter: 18648
+                    stepCounter: "1622"
                 transform: ""
           - columnReference:
               columnCounter: 19158
@@ -215,13 +215,21 @@ steps:
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - customSQL:
+          - aliases:
+              HUB_CUSTOMER: "1622"
+              SAT_CUSTOMER: "1630"
+            customSQL:
               customSQL: ""
             dependencies:
               - locationName: DWH
+                nodeName: HUB_CUSTOMER
+              - locationName: DWH
                 nodeName: SAT_CUSTOMER
             join:
-              joinCondition: FROM {{ ref('DWH', 'SAT_CUSTOMER') }} "SAT_CUSTOMER"
+              joinCondition: |-
+                FROM {{ ref('DWH', 'HUB_CUSTOMER') }} "HUB_CUSTOMER"
+                INNER JOIN {{ ref('DWH', 'SAT_CUSTOMER') }} "SAT_CUSTOMER"
+                ON "HUB_CUSTOMER"."H_CUSTOMER_KEY" = "SAT_CUSTOMER"."H_CUSTOMER_KEY"
             name: VSAT_CUSTOMER
             noLinkRefs: []
       name: VSAT_CUSTOMER

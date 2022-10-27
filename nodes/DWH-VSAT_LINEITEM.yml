@@ -27,8 +27,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18805
-                    stepCounter: "1631"
+                  - columnCounter: 18730
+                    stepCounter: "1626"
                 transform: ""
           - columnReference:
               columnCounter: 18991
@@ -327,13 +327,21 @@ steps:
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - customSQL:
+          - aliases:
+              LNK_LINEITEM: "1626"
+              LSAT_LINEITEM: "1631"
+            customSQL:
               customSQL: ""
             dependencies:
               - locationName: DWH
+                nodeName: LNK_LINEITEM
+              - locationName: DWH
                 nodeName: LSAT_LINEITEM
             join:
-              joinCondition: FROM {{ ref('DWH', 'LSAT_LINEITEM') }} "LSAT_LINEITEM"
+              joinCondition: |-
+                FROM {{ ref('DWH', 'LNK_LINEITEM') }} "LNK_LINEITEM"
+                INNER JOIN {{ ref('DWH', 'LSAT_LINEITEM') }} "LSAT_LINEITEM"
+                ON "LNK_LINEITEM"."L_ORDER_LINE_KEY" = "LSAT_LINEITEM"."L_ORDER_LINE_KEY"
             name: VSAT_LINEITEM
             noLinkRefs: []
       name: VSAT_LINEITEM

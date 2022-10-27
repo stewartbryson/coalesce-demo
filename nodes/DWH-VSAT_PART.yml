@@ -27,8 +27,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18833
-                    stepCounter: "1633"
+                  - columnCounter: 18708
+                    stepCounter: "1625"
                 transform: ""
           - columnReference:
               columnCounter: 18967
@@ -41,8 +41,8 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 18824
-                    stepCounter: "1633"
+                  - columnCounter: 18699
+                    stepCounter: "1625"
                 transform: ""
           - columnReference:
               columnCounter: 18968
@@ -202,14 +202,20 @@ steps:
         enabledColumnTestIDs: []
         sourceMapping:
           - aliases:
+              HUB_PART: "1625"
               SAT_PART: "1633"
             customSQL:
               customSQL: ""
             dependencies:
               - locationName: DWH
+                nodeName: HUB_PART
+              - locationName: DWH
                 nodeName: SAT_PART
             join:
-              joinCondition: FROM {{ ref('DWH', 'SAT_PART') }} "SAT_PART"
+              joinCondition: |-
+                FROM {{ ref('DWH', 'HUB_PART') }} "HUB_PART"
+                INNER JOIN {{ ref('DWH', 'SAT_PART') }} "SAT_PART"
+                ON "HUB_PART"."H_PART_KEY" = "SAT_PART"."H_PART_KEY"
             name: VSAT_PART
             noLinkRefs: []
       name: VSAT_PART

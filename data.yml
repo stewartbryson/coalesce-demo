@@ -2564,7 +2564,7 @@ stepTypes:
                 {{ source.join }}
                 
                 QUALIFY 1 = ROW_NUMBER() OVER (PARTITION BY 
-                {% for col in source.columns if col.sourceColumns[0].column.isHubHash %}
+                {% for col in source.columns if col.sourceColumns[0].column.isHubHash or col.sourceColumns[0].column.isLinkHash %}
                     {%- if loop.first -%} {{ get_source_transform(col) }} {% endif %}
                 {% endfor %}
                 ORDER BY 
