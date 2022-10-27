@@ -75,6 +75,42 @@ macros:
       {%- macro even_odd(column) -%}
           CASE WHEN MOD({{ column }}, 2) = 0 THEN 'EVEN' ELSE 'ODD' END
       {%- endmacro %}
+
+
+      {%- macro insert_audit_row() -%}
+          INSERT INTO "DOUG_DB"."DEV_EDW"."ETL_BATCH" (
+              "JOB_NAME",
+              "ITERATION",
+              "JOB_STATUS",
+              "START_TIME"
+          )
+          WITH counter (num_rows) AS (
+              SELECT count(*) + 1 AS num_rows 
+              FROM "JUSTIN_EDW"."DEV_EDW"."ETL_BATCH"
+              WHERE job_name = '{{node.name}}'||'_JOB')
+          SELECT 
+              '{{node.name}}'||'_JOB', 
+              num_rows, 
+              'STARTED', 
+              CURRENT_TIMESTAMP() 
+          FROM counter
+      {%- endmacro %}
+
+      {%- macro update_audit_row() -%}
+          UPDATE "DOUG_DB"."DEV_EDW"."ETL_BATCH"
+          SET 
+              END_TIME = current_timestamp(),
+              JOB_STATUS = 'FINISHED'
+          FROM (
+              WITH counter (num_rows) AS (
+                  SELECT count(*) AS num_rows 
+                  FROM "JUSTIN_EDW"."DEV_EDW"."ETL_BATCH" 
+                  WHERE job_name = '{{node.name}}'||'_JOB') 
+              SELECT counter.num_rows 
+              FROM counter) AS ctes
+          WHERE ITERATION = ctes.num_rows
+          AND JOB_NAME = '{{node.name}}'||'_JOB'
+      {%- endmacro %}
 packages: {}
 projects: {}
 stepTypes:
@@ -5031,6 +5067,11 @@ stepTypes:
     name: Persistent Stage
     version: 1
 subgraphs:
+  Subgraph-38:
+    id: 38
+    name: New Sub-Graph
+    steps:
+      - "1604"
   Subgraph-7:
     id: 7
     name: Dim Supplier
