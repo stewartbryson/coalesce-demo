@@ -5076,8 +5076,7 @@ subgraphs:
   Subgraph-38:
     id: 38
     name: New Sub-Graph
-    steps:
-      - "1604"
+    steps: []
   Subgraph-7:
     id: 7
     name: Dim Supplier
@@ -5094,5 +5093,4 @@ subgraphs:
       - "1532"
       - "1533"
       - "1534"
-      - "1604"
 version: 1
