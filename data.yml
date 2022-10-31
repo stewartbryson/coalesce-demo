@@ -2585,6 +2585,49 @@ stepTypes:
           templateString: ""
     name: Current SAT View
     version: 1
+  StepType-51:
+    id: "51"
+    isDisabled: false
+    metadata:
+      defaultStorageLocation: DWH
+      error: null
+      nodeMetadataSpec: |
+        capitalized: ALL
+        short: DIM
+        tagColor: '#1E339A'
+        plural: Dimensions
+
+
+        systemColumns:
+        - displayName: COL_METADATA
+          transform: ''
+          dataType: VARIANT
+          placement: beginning
+          attributeName: isNodeType
+      templates:
+        create:
+          templateString: |+
+            {{ stage('Create All View') }}
+            CREATE OR REPLACE VIEW {{ ref_no_link(node.location.name, node.name) }}
+            (
+            	"COL_METADATA"
+            )
+            AS
+            	{% for source in sources %}
+            		{% for col in source.columns %}
+            			SELECT 
+            			TO_VARIANT('{{col | replace("'",'"')}}') 
+            			{%- if not loop.last -%} UNION ALL {% endif %}
+            		{% endfor %}
+            		{%- if not loop.last -%} UNION ALL {% endif %}
+            	{% endfor %}
+
+
+
+        run:
+          templateString: ""
+    name: ALL VIEW
+    version: 1
   StepType-9:
     id: "9"
     isDisabled: false

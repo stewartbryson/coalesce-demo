@@ -65,7 +65,7 @@ steps:
           - columnReference:
               columnCounter: 20118
               stepCounter: "1710"
-            dataType: CHAR(6)
+            dataType: CHAR(7)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -76,7 +76,7 @@ steps:
               - columnReferences:
                   - columnCounter: 19339
                     stepCounter: "1662"
-                transform: TO_CHAR((YEAR("FCT_LINE_ITEM"."L_COMMITDATE") * 100) + MONTH(FCT_LINE_ITEM."L_COMMITDATE"))
+                transform: TO_CHAR(YEAR("FCT_LINE_ITEM"."L_COMMITDATE")) || '-' || RIGHT('00'||TO_CHAR(MONTH(FCT_LINE_ITEM."L_COMMITDATE")),2)
           - columnReference:
               columnCounter: 20112
               stepCounter: "1710"

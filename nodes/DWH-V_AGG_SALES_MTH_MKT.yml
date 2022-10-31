@@ -17,46 +17,46 @@ steps:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 20150
+              columnCounter: 20161
               stepCounter: "1712"
-            dataType: NUMBER
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: DIM_ORDERS_KEY
-            nullable: true
+            name: NATION
+            nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 20106
-                    stepCounter: "1710"
+                  - columnCounter: 19202
+                    stepCounter: "1659"
                 transform: ""
           - columnReference:
-              columnCounter: 20151
+              columnCounter: 20160
               stepCounter: "1712"
-            dataType: NUMBER
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: DIM_CUSTOMER_KEY
-            nullable: true
+            name: CUSTOMER_NAME
+            nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 20108
-                    stepCounter: "1710"
+                  - columnCounter: 19195
+                    stepCounter: "1659"
                 transform: ""
           - columnReference:
-              columnCounter: 20152
+              columnCounter: 20164
               stepCounter: "1712"
-            dataType: NUMBER
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: DIM_SUPPLIER_KEY
-            nullable: true
+            name: SUPPLIER
+            nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 20109
-                    stepCounter: "1710"
+                  - columnCounter: 19074
+                    stepCounter: "1652"
                 transform: ""
           - columnReference:
               columnCounter: 20153
@@ -157,34 +157,6 @@ steps:
                     stepCounter: "1710"
                 transform: ""
           - columnReference:
-              columnCounter: 20160
-              stepCounter: "1712"
-            dataType: VARCHAR(25)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: C_NAME
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 19195
-                    stepCounter: "1659"
-                transform: ""
-          - columnReference:
-              columnCounter: 20161
-              stepCounter: "1712"
-            dataType: VARCHAR(25)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_NAME
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 19202
-                    stepCounter: "1659"
-                transform: ""
-          - columnReference:
               columnCounter: 20162
               stepCounter: "1712"
             dataType: VARCHAR(25)
@@ -211,20 +183,6 @@ steps:
               - columnReferences:
                   - columnCounter: 19115
                     stepCounter: "1654"
-                transform: ""
-          - columnReference:
-              columnCounter: 20164
-              stepCounter: "1712"
-            dataType: VARCHAR(25)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: S_NAME
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 19074
-                    stepCounter: "1652"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []

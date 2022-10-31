@@ -433,7 +433,7 @@ steps:
               - locationName: DWH
                 nodeName: VLNK_PART_SUPPLIER
             join:
-              joinCondition: |
+              joinCondition: |-
                 FROM {{ ref('DWH', 'VPIT_LINEITEM') }} "VPIT_LINEITEM"
                 LEFT JOIN {{ ref('DWH', 'VLNK_ORDER_CUSTOMER') }} "VLNK_ORDER_CUSTOMER"
                 ON "VPIT_LINEITEM"."H_ORDER_KEY" = "VLNK_ORDER_CUSTOMER"."H_ORDER_KEY"
@@ -448,8 +448,12 @@ steps:
                 ON "VLNK_PART_SUPPLIER"."PS_SUPPKEY" = "DIM_SUPPLIER"."S_SUPPKEY"
                 LEFT JOIN {{ ref('DWH', 'DIM_CUSTOMER') }} "DIM_CUSTOMER"
                 ON "VLNK_ORDER_CUSTOMER"."O_CUSTKEY" = "DIM_CUSTOMER"."C_CUSTKEY"
+
+                WHERE "VPIT_LINEITEM"."LOAD_DATE" > (SELECT NVL(MAX("LOAD_DATE"),'1900-01-01') FROM {{ ref_no_link('DWH','FCT_LINE_ITEM') }} )
             name: STG_FCT_LINE_ITEM
-            noLinkRefs: []
+            noLinkRefs:
+              - locationName: DWH
+                nodeName: FCT_LINE_ITEM
       name: STG_FCT_LINE_ITEM
       overrideSQL: false
       schema: ""
