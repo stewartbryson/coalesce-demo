@@ -1,0 +1,202 @@
+steps:
+  STG_SUPPLIER-187:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: 2
+      locationName: STAGE
+      materializationType: table
+      metadata:
+        appliedNodeTests:
+          - continueOnFailure: true
+            description: ""
+            name: Supplier Name Succeed
+            runOrder: After
+            templateString: |-
+              SELECT S_NAME
+              FROM {{this}} 
+              WHERE S_NAME NOT LIKE 'Doug%'
+        columns:
+          - appliedColumnTests:
+              hasNull: true
+              isDistinct: true
+            columnReference:
+              columnCounter: 2172
+              stepCounter: 186
+            dataType: NUMBER(38,0)
+            description: ""
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 491
+                    stepCounter: "46"
+                transform: ""
+          - appliedColumnTests:
+              hasNull: true
+              isDistinct: true
+            columnReference:
+              columnCounter: 2173
+              stepCounter: 186
+            dataType: VARCHAR(25)
+            description: ""
+            name: S_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 492
+                    stepCounter: "46"
+                transform: upper("SUPPLIER"."S_NAME")
+          - appliedColumnTests:
+              hasNull: true
+              isDistinct: false
+            columnReference:
+              columnCounter: 2174
+              stepCounter: 186
+            dataType: VARCHAR(40)
+            description: ""
+            name: S_ADDRESS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 493
+                    stepCounter: "46"
+                transform: ""
+          - appliedColumnTests:
+              hasNull: false
+              isDistinct: false
+            columnReference:
+              columnCounter: 2175
+              stepCounter: 186
+            dataType: NUMBER(38,0)
+            description: ""
+            name: S_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 494
+                    stepCounter: "46"
+                transform: ""
+          - appliedColumnTests:
+              hasNull: false
+              isDistinct: false
+            columnReference:
+              columnCounter: 2176
+              stepCounter: 186
+            dataType: VARCHAR(15)
+            description: ""
+            name: S_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 495
+                    stepCounter: "46"
+                transform: ""
+          - appliedColumnTests:
+              hasNull: false
+              isDistinct: false
+            columnReference:
+              columnCounter: 2177
+              stepCounter: 186
+            dataType: NUMBER(12,2)
+            description: ""
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 496
+                    stepCounter: "46"
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 3785
+              stepCounter: "186"
+            dataType: VARCHAR(101)
+            description: ""
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 497
+                    stepCounter: "46"
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 4179
+              stepCounter: "186"
+            config: {}
+            dataType: VARCHAR(10)
+            defaultValue: ""
+            description: ""
+            keyColumnType: None
+            name: EVEN_ODD
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 0
+                    stepCounter: "0"
+                transform: "{{ even_odd('\"SUPPLIER\".\"S_SUPPKEY\"') }}"
+            systemColumnType: None
+            transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 4180
+              stepCounter: "186"
+            config: {}
+            dataType: VARCHAR(10)
+            defaultValue: ""
+            description: ""
+            keyColumnType: None
+            name: P_VALUE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 0
+                    stepCounter: "0"
+                transform: "'{{parameters.accepted_values[0]}}'"
+            systemColumnType: None
+            transform: ""
+        cteString: ""
+        enabledColumnTestIDs:
+          - hasNull
+          - isDistinct
+        sourceMapping:
+          - aliases:
+              DIM_SUPPLIER: "1532"
+              SUPPLIER: "46"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: SOURCE
+                nodeName: SUPPLIER
+            join:
+              joinCondition: "FROM {{ ref('SOURCE', 'SUPPLIER') }} \"SUPPLIER\"\r\nLEFT JOIN {{ ref_no_link('DWH', 'DIM_SUPPLIER') }} \"DIM_SUPPLIER\"\r\nON \"SUPPLIER\".\"S_SUPPKEY\" = \"DIM_SUPPLIER\".\"S_SUPPKEY\"\r\nWHERE \"DIM_SUPPLIER\".\"S_SUPPKEY\" IS NULL\r\n"
+            name: STG_SUPPLIER
+            noLinkRefs:
+              - locationName: DWH
+                nodeName: DIM_SUPPLIER
+      name: STG_SUPPLIER_TEST
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: "187"
