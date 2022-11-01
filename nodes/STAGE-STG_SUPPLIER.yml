@@ -25,7 +25,7 @@ steps:
             templateString: |-
               SELECT S_NAME
               FROM {{this}} 
-              WHERE S_NAME not LIKE 'Doug%'
+              WHERE S_NAME  LIKE 'Doug%'
         columns:
           - appliedColumnTests:
               hasNull: true
