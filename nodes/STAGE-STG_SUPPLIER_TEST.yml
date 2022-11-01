@@ -199,4 +199,4 @@ steps:
       schema: ""
       sqlType: Stage
       type: sql
-    stepCounter: "187"
+    stepCounter: "STG_SUPPLIER_TEST-187"
