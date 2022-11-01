@@ -106,6 +106,21 @@ steps:
               hasNull: false
               isDistinct: false
             columnReference:
+              columnCounter: 25480
+              stepCounter: 186
+            dataType: VARCHAR(15)
+            description: ""
+            name: S_PHONE1
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 495
+                    stepCounter: "46"
+                transform: ""
+          - appliedColumnTests:
+              hasNull: false
+              isDistinct: false
+            columnReference:
               columnCounter: 2177
               stepCounter: 186
             dataType: NUMBER(12,2)
