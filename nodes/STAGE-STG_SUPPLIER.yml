@@ -18,14 +18,14 @@ steps:
       materializationType: table
       metadata:
         appliedNodeTests:
-          - continueOnFailure: true
+          - continueOnFailure: false
             description: ""
             name: Supplier Name Succeed
             runOrder: After
             templateString: |-
               SELECT S_NAME
               FROM {{this}} 
-              WHERE S_NAME NOT LIKE 'Doug%'
+              WHERE S_NAME not LIKE 'Doug%'
         columns:
           - appliedColumnTests:
               hasNull: true

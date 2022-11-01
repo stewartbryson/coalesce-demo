@@ -1,11 +1,5 @@
 defaultStorageMapping: STAGE
 jobs:
-  Job-20:
-    id: 20
-    name: New Job
-    steps:
-      - "1532"
-    subgraphs: []
   Job-5:
     id: 5
     name: Supplier pipeline

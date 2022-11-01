@@ -81,7 +81,7 @@ steps:
                 transform: ""
           - appliedColumnTests:
               hasNull: false
-              isDistinct: false
+              isDistinct: true
             columnReference:
               columnCounter: 603
               stepCounter: 57
