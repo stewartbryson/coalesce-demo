@@ -1,5 +1,5 @@
 steps:
-  SP_SIMPLE-1882:
+  SP_SIMPLE-1883:
     operation:
       config:
         SQL1: |
@@ -30,8 +30,8 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 25664
-              stepCounter: "1882"
+              columnCounter: 25666
+              stepCounter: "1883"
             config: {}
             dataType: NUMBER IDENTITY
             defaultValue: ""
@@ -48,8 +48,8 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 25665
-              stepCounter: "1882"
+              columnCounter: 25667
+              stepCounter: "1883"
             config: {}
             dataType: TIMESTAMP
             defaultValue: ""
@@ -76,4 +76,4 @@ steps:
       schema: ""
       sqlType: "52"
       type: sql
-    stepCounter: "1882"
+    stepCounter: "1883"

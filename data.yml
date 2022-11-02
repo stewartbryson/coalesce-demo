@@ -15,7 +15,7 @@ locations:
         schema: PROD_EDW
       "5":
         database: DOUG_DB
-        schema: DEV_EDW_DOUG
+        schema: QA_DWH
   SOURCE:
     mappingDefinitions:
       "3":
@@ -47,7 +47,7 @@ locations:
         schema: PROD_STG
       "5":
         database: DOUG_DB
-        schema: DEV_STG_DOUG
+        schema: QA_STG
 macros:
   Macro-1:
     id: "1"
