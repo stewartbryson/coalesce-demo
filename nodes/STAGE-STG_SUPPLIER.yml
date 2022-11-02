@@ -4,7 +4,7 @@ steps:
       config:
         insertStrategy: INSERT
         postSQL: ""
-        preSQL: ""
+        preSQL: call {{ref('STAGE','SP_SIMPLE')}}('hi')
         testsEnabled: true
         truncateBefore: true
       database: ""
