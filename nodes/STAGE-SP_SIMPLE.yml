@@ -1,0 +1,78 @@
+steps:
+  SP_SIMPLE-1885:
+    operation:
+      config:
+        SQL1: |-
+          CREATE OR REPLACE PROCEDURE {{this}}("MESSAGE" STRING)
+          RETURNS STRING
+          LANGUAGE SQL
+          EXECUTE AS OWNER
+          AS '
+          begin
+            return message;
+          end;
+          ';
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: STAGE
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 25670
+              stepCounter: "1885"
+            config: {}
+            dataType: NUMBER IDENTITY
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSurrogateKey: true
+            name: SQL_SEQ
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 25671
+              stepCounter: "1885"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemStartDate: true
+            name: SYSTEM_START_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies: []
+            join:
+              joinCondition: ""
+            name: SP_SIMPLE
+            noLinkRefs: []
+      name: SP_SIMPLE
+      overrideSQL: false
+      schema: ""
+      sqlType: "52"
+      type: sql
+    stepCounter: "1885"
