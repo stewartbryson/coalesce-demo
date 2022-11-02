@@ -2985,7 +2985,7 @@ stepTypes:
     metadata:
       defaultStorageLocation: STAGE
       error: null
-      nodeMetadataSpec: |+
+      nodeMetadataSpec: |-
         capitalized: Copy of SQL
         short: SQL
         plural: SQLs
@@ -3000,6 +3000,18 @@ stepTypes:
             syntax: sql
             isRequired: true
 
+        systemColumns:
+        - displayName: SQL_SEQ
+          transform: ''
+          dataType: NUMBER IDENTITY
+          placement: beginning
+          attributeName: isSurrogateKey
+
+        - displayName: SYSTEM_START_DATE
+          transform: ''
+          dataType: TIMESTAMP
+          placement: end
+          attributeName: isSystemStartDate
       templates:
         create:
           templateString: |-

@@ -1,5 +1,5 @@
 steps:
-  SP_SIMPLE-1881:
+  SP_SIMPLE-1882:
     operation:
       config:
         SQL1: |
@@ -24,7 +24,43 @@ steps:
       materializationType: table
       metadata:
         appliedNodeTests: []
-        columns: []
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 25664
+              stepCounter: "1882"
+            config: {}
+            dataType: NUMBER IDENTITY
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSurrogateKey: true
+            name: SQL_SEQ
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 25665
+              stepCounter: "1882"
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemStartDate: true
+            name: SYSTEM_START_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
@@ -40,4 +76,4 @@ steps:
       schema: ""
       sqlType: "52"
       type: sql
-    stepCounter: "1881"
+    stepCounter: "1882"
