@@ -1,0 +1,43 @@
+steps:
+  SP_SIMPLE-1881:
+    operation:
+      config:
+        SQL1: |
+
+          CREATE OR REPLACE PROCEDURE {{this}}("MESSAGE" STRING)
+          RETURNS STRING
+          LANGUAGE SQL
+          EXECUTE AS OWNER
+          AS '
+          begin
+            return message;
+          end;
+          ';
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: STAGE
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns: []
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies: []
+            join:
+              joinCondition: ""
+            name: SP_SIMPLE
+            noLinkRefs: []
+      name: SP_SIMPLE
+      overrideSQL: false
+      schema: ""
+      sqlType: "52"
+      type: sql
+    stepCounter: "1881"
