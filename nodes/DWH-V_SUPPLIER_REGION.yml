@@ -1,0 +1,142 @@
+steps:
+  V_SUPPLIER_REGION-1890:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 25709
+              stepCounter: "1890"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 491
+                    stepCounter: "46"
+                transform: ""
+          - columnReference:
+              columnCounter: 25710
+              stepCounter: "1890"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SUPPLIER
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 492
+                    stepCounter: "46"
+                transform: ""
+          - columnReference:
+              columnCounter: 25711
+              stepCounter: "1890"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NATION
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6346
+                    stepCounter: "557"
+                transform: ""
+          - columnReference:
+              columnCounter: 25712
+              stepCounter: "1890"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: REGION
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 489
+                    stepCounter: "45"
+                transform: ""
+          - columnReference:
+              columnCounter: 25713
+              stepCounter: "1890"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ITEM_COUNT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 25697
+                    stepCounter: "1889"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases: {}
+            customSQL:
+              customSQL: |-
+                {{ stage('Override Create SQL') }}
+                	CREATE OR REPLACE VIEW {{ ref('DWH', 'V_SUPPLIER_REGION')}} AS (
+                WITH 
+                    region_cte as (
+                        SELECT R_REGIONKEY, R_NAME AS REGION 
+                        FROM {{ref('SOURCE', 'REGION')}}),
+                    nation_cte as (
+                        SELECT N_NATIONKEY, N_NAME AS NATION, N_REGIONKEY
+                        FROM {{ref('SOURCE', 'NATION')}}),
+                    nation_region as (
+                        SELECT N_NATIONKEY, NATION, REGION
+                        FROM  nation_cte
+                        JOIN region_cte ON nation_cte.N_REGIONKEY= region_cte.R_REGIONKEY),
+                    supplier_cte as (
+                        SELECT S_SUPPKEY, S_NAME AS SUPPLIER, NATION, REGION
+                        FROM {{ref('SOURCE', 'SUPPLIER')}}
+                        JOIN nation_region ON supplier.S_NATIONKEY= nation_region.N_NATIONKEY
+                        WHERE 1 = 1),
+                    item_count as (
+                        SELECT L_SUPPKEY, COUNT(1) AS ITEM_COUNT
+                        FROM {{ref('SOURCE', 'LINEITEM')}}
+                        GROUP BY 1)
+                SELECT supplier_cte.*, item_count.ITEM_COUNT
+                FROM supplier_cte JOIN item_count ON supplier_cte.S_SUPPKEY = item_count.L_SUPPKEY
+                	)
+            dependencies:
+              - locationName: SOURCE
+                nodeName: REGION
+              - locationName: SOURCE
+                nodeName: SUPPLIER
+              - locationName: SOURCE
+                nodeName: NATION
+              - locationName: SOURCE
+                nodeName: LINEITEM
+            join:
+              joinCondition: |-
+                {{ref('SOURCE', 'REGION')}}
+                {{ref('SOURCE', 'NATION')}}
+                {{ref('SOURCE', 'SUPPLIER')}}
+                {{ref('SOURCE', 'LINEITEM')}}
+            name: V_SUPPLIER_REGION
+            noLinkRefs: []
+      name: V_SUPPLIER_REGION
+      overrideSQL: true
+      schema: ""
+      sqlType: View
+      type: sql
+    stepCounter: "1890"
