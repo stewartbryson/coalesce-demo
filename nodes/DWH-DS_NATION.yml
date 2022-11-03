@@ -68,7 +68,21 @@ steps:
             description: ""
             hashColumns: []
             hashDetails: null
-            name: N_COMMENT
+            name: N_COMMENT0
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6348
+                    stepCounter: "557"
+                transform: ""
+          - columnReference:
+              columnCounter: 25729
+              stepCounter: "1892"
+            dataType: VARCHAR(152)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_COMMENT1
             nullable: true
             sourceColumnReferences:
               - columnReferences:
