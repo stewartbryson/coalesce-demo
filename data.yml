@@ -175,6 +175,9 @@ stepTypes:
         create:
           templateString: |-
             {% if currentState == undefined  %}
+            --
+            -- Create table
+            --
                 {{ stage('Create Table') }}
                 CREATE OR REPLACE TABLE {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
                 (
@@ -189,7 +192,17 @@ stepTypes:
                 )
                 {%- if desiredState.node.description | length > 0 %} COMMENT = '{{ desiredState.node.description }}'{% endif %}
 
+            {% elif currentState != undefined and desiredState == undefined  %}
+            --
+            -- Drop table
+            --
+                {{ stage('Drop Table') }}
+                DROP TABLE {{ ref_no_link(currentState.node.location.name, currentState.node.name) }}
+
             {% elif currentState != undefined and desiredState != undefined  %}
+            --
+            -- Alter table
+            --
                 {% set counter = namespace(changes = 0) %}
                 {#-- Location or name changed --#}
                 {% if currentState.node.location.id != desiredState.node.location.id or currentState.node.name != desiredState.node.name %}
