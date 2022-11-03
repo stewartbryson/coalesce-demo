@@ -198,11 +198,12 @@ stepTypes:
                     ALTER TABLE {{ ref_no_link(currentState.node.location.name, currentState.node.name) }}
                     RENAME TO   {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
                 {% endif %}
+
                 {#-- Drop columns --#}
                 {% for curcol in currentState.columns if curcol.id not in desiredState.columns | map(attribute="id") %}
                     {% set counter.changes = counter.changes + 1 %}
                     {% if loop.first %}
-                        {{ stage('Drop Columns') }}
+                        {{ stage('Add Columns') }}
                         ALTER TABLE {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
                         DROP COLUMN
                     {% else %}
@@ -210,6 +211,24 @@ stepTypes:
                     {% endif %}
                     {{ curcol.name }}
                 {% endfor %}
+
+                {#-- Add columns --#}
+                {% for curcol in desiredState.columns if curcol.id not in currentState.columns | map(attribute="id") %}
+                    {% set counter.changes = counter.changes + 1 %}
+                    {% if loop.first %}
+                        {{ stage('Add Columns') }}
+                        ALTER TABLE {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
+                        ADD COLUMN
+                    {% else %}
+                        ,
+                    {% endif %}
+                    "{{ curcol.name }}" {{ curcol.dataType }}
+                    {%- if not curcol.nullable %} NOT NULL
+                        {%- if curcol.defaultValue | length > 0 %} DEFAULT {{ curcol.defaultValue }}{% endif %}
+                    {% endif %}
+                    {%- if curcol.description | length > 0 %} COMMENT '{{ curcol.description }}'{% endif %}
+                {% endfor %}
+
                 {#-- Rename columns (one at a time) --#}
                 {% for curcol in currentState.columns 
                 if curcol.name != (desiredState.columns | selectattr('id', "equalto", curcol.id) | list | first).name %}
