@@ -1,18 +1,5 @@
 defaultStorageMapping: STAGE
-jobs:
-  Job-21:
-    id: 21
-    name: Create Stored Procedures
-    steps:
-      - "1857"
-    subgraphs: []
-  Job-5:
-    id: 5
-    name: Supplier pipeline
-    steps:
-      - "58"
-      - "1532"
-    subgraphs: []
+jobs: {}
 locations:
   DWH:
     mappingDefinitions:
