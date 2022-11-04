@@ -5080,22 +5080,15 @@ stepTypes:
     name: Persistent Stage
     version: 1
 subgraphs:
-  Subgraph-38:
-    id: 38
-    name: New Sub-Graph
-    steps: []
-  Subgraph-7:
-    id: 7
-    name: Dim Supplier
+  Subgraph-4:
+    id: 4
+    name: Staging
     steps:
-      - "46"
-      - "56"
-      - "57"
-      - "150"
-      - "152"
-      - "153"
-      - "270"
-      - "332"
-      - "1532"
-      - "1534"
+      - "200"
+      - "201"
+      - "202"
+      - "203"
+      - "204"
+      - "205"
+      - "206"
 version: 1

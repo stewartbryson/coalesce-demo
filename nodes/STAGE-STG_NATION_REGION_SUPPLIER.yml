@@ -1,0 +1,274 @@
+steps:
+  STG_NATION_REGION_SUPPLIER-206:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: STAGE
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 3568
+              stepCounter: "206"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PSTG_NATION_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3533
+                    stepCounter: "203"
+                transform: ""
+          - columnReference:
+              columnCounter: 3569
+              stepCounter: "206"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3534
+                    stepCounter: "203"
+                transform: ""
+          - columnReference:
+              columnCounter: 3570
+              stepCounter: "206"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3535
+                    stepCounter: "203"
+                transform: INITCAP("PSTG_NATION"."N_NAME")
+          - columnReference:
+              columnCounter: 3571
+              stepCounter: "206"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3536
+                    stepCounter: "203"
+                transform: ""
+          - columnReference:
+              columnCounter: 3579
+              stepCounter: "206"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PSTG_REGION_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3544
+                    stepCounter: "204"
+                transform: ""
+          - columnReference:
+              columnCounter: 3580
+              stepCounter: "206"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3545
+                    stepCounter: "204"
+                transform: ""
+          - columnReference:
+              columnCounter: 3581
+              stepCounter: "206"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3546
+                    stepCounter: "204"
+                transform: INITCAP("PSTG_REGION"."R_NAME")
+          - columnReference:
+              columnCounter: 3589
+              stepCounter: "206"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PSTG_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3554
+                    stepCounter: "205"
+                transform: ""
+          - columnReference:
+              columnCounter: 3590
+              stepCounter: "206"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3555
+                    stepCounter: "205"
+                transform: ""
+          - columnReference:
+              columnCounter: 3591
+              stepCounter: "206"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3556
+                    stepCounter: "205"
+                transform: ""
+          - columnReference:
+              columnCounter: 3592
+              stepCounter: "206"
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ADDRESS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3557
+                    stepCounter: "205"
+                transform: ""
+          - columnReference:
+              columnCounter: 3593
+              stepCounter: "206"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3558
+                    stepCounter: "205"
+                transform: ""
+          - columnReference:
+              columnCounter: 3594
+              stepCounter: "206"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3559
+                    stepCounter: "205"
+                transform: ""
+          - columnReference:
+              columnCounter: 3595
+              stepCounter: "206"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3560
+                    stepCounter: "205"
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 3604
+              stepCounter: "206"
+            config: {}
+            dataType: STRING
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            hashDetails:
+              hashAlgorithm: SHA1
+            hashedColumns:
+              - columnCounter: 3569
+                stepCounter: "206"
+              - columnCounter: 3571
+                stepCounter: "206"
+              - columnCounter: 3590
+                stepCounter: "206"
+            name: SUPPLIER_ID
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              PSTG_NATION: "203"
+              PSTG_REGION: "204"
+              PSTG_SUPPLIER: "205"
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: STAGE
+                nodeName: PSTG_NATION
+              - locationName: STAGE
+                nodeName: PSTG_REGION
+              - locationName: STAGE
+                nodeName: PSTG_SUPPLIER
+            join:
+              joinCondition: |-
+                FROM {{ ref('STAGE', 'PSTG_NATION') }} "PSTG_NATION"
+                LEFT JOIN {{ ref('STAGE', 'PSTG_REGION') }} "PSTG_REGION"
+                ON "PSTG_NATION"."N_REGIONKEY" = "PSTG_REGION"."R_REGIONKEY"
+                LEFT JOIN {{ ref('STAGE', 'PSTG_SUPPLIER') }} "PSTG_SUPPLIER"
+                ON "PSTG_NATION"."N_NATIONKEY" = "PSTG_SUPPLIER"."S_NATIONKEY"
+            name: STG_NATION_REGION_SUPPLIER
+            noLinkRefs: []
+      name: STG_NATION_REGION_SUPPLIER
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: "206"
