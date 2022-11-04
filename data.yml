@@ -5088,7 +5088,6 @@ subgraphs:
     id: 7
     name: Dim Supplier
     steps:
-      - "45"
       - "46"
       - "56"
       - "57"
