@@ -193,7 +193,7 @@ steps:
             dataType: VARCHAR
             description: ""
             name: CUSTOMER_RATING
-            nullable: false
+            nullable: true
             sourceColumnReferences:
               - columnReferences: []
                 transform: |-
