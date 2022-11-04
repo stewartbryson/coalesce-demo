@@ -5084,7 +5084,6 @@ subgraphs:
     id: 4
     name: Staging
     steps:
-      - "200"
       - "201"
       - "202"
       - "203"
