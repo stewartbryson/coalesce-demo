@@ -1,0 +1,19 @@
+curl --request POST \
+     --url 'https://qa.app.coalescestage.io/scheduler/startRun?token=AOEOulbID-X323SIlxAUHmcJ21W_hgOvOoaCCWpAPDzmrf0_L8accka-1dMwoAwi6sVITtuMfiUY02QXqXghK-pvtd0pL0a96QJHYuG6lIon3Z5VLav9gOqy2GRzEopYx_h5iSifT3Zzmc391P7EHUVZEt_vh2zVzA2FcHzeKXOfxrhpXip5aHBtg31Jw2xkUIDf4JG5dTad' \
+     --header 'accept: application/json' \
+     --header 'content-type: application/json' \
+     --data '
+{
+     "runDetails": {
+          "environmentID": "8",
+          "jobID": "5"
+     },
+     "userCredentials": {
+          "snowflakeAuthType": "Basic",
+          "snowflakeUsername": "'"$SNOWFLAKE_USER"'",
+          "snowflakePassword": "'"$SNOWFLAKE_PASSWORD"'",
+          "snowflakeWarehouse": "stewart",
+          "snowflakeRole": "stewart_role"
+     }
+}
+'
