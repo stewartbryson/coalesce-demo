@@ -1,23 +1,22 @@
 defaultStorageMapping: STAGE
-jobs:
-  Job-5:
-    id: 5
-    name: Supplier pipeline
-    steps:
-      - "58"
-      - "1532"
-    subgraphs: []
+jobs: {}
 locations:
   DWH:
     mappingDefinitions:
       "3":
         database: DOUG_DB
         schema: PROD_EDW
+      "8":
+        database: STEWART_QA
+        schema: DWH
   SOURCE:
     mappingDefinitions:
       "3":
         database: COALESCE_SAMPLE_DATABASE
         schema: TPCH_SF001
+      "8":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
   SOURCE1:
     mappingDefinitions:
       "3":
@@ -26,6 +25,9 @@ locations:
       "5":
         database: ""
         schema: ""
+      "8":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
   SOURCE2:
     mappingDefinitions:
       "3":
@@ -34,11 +36,17 @@ locations:
       "5":
         database: ""
         schema: ""
+      "8":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
   STAGE:
     mappingDefinitions:
       "3":
         database: DOUG_DB
         schema: PROD_STG
+      "8":
+        database: STEWART_QA
+        schema: STAGE
 macros:
   Macro-1:
     id: "1"
