@@ -248,6 +248,39 @@ steps:
             sourceColumnReferences:
               - columnReferences: []
                 transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 3630
+              stepCounter: "207"
+            dataType: VARCHAR
+            description: ""
+            name: CUSTOMER_RATING
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3629
+                    stepCounter: "206"
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 3632
+              stepCounter: "207"
+            dataType: VARCHAR(101)
+            description: ""
+            isChangeTracking: true
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3631
+                    stepCounter: "206"
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:

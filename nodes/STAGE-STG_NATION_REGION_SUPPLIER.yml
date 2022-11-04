@@ -24,8 +24,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: PSTG_NATION_KEY
             nullable: true
             sourceColumnReferences:
@@ -38,8 +36,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: N_NATIONKEY
             nullable: false
             sourceColumnReferences:
@@ -52,8 +48,6 @@ steps:
               stepCounter: "206"
             dataType: VARCHAR(25)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: N_NAME
             nullable: false
             sourceColumnReferences:
@@ -66,8 +60,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: N_REGIONKEY
             nullable: false
             sourceColumnReferences:
@@ -80,8 +72,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: PSTG_REGION_KEY
             nullable: true
             sourceColumnReferences:
@@ -94,8 +84,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: R_REGIONKEY
             nullable: false
             sourceColumnReferences:
@@ -108,8 +96,6 @@ steps:
               stepCounter: "206"
             dataType: VARCHAR(25)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: R_NAME
             nullable: false
             sourceColumnReferences:
@@ -122,8 +108,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: PSTG_SUPPLIER_KEY
             nullable: true
             sourceColumnReferences:
@@ -136,8 +120,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: S_SUPPKEY
             nullable: false
             sourceColumnReferences:
@@ -150,8 +132,6 @@ steps:
               stepCounter: "206"
             dataType: VARCHAR(25)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: S_NAME
             nullable: false
             sourceColumnReferences:
@@ -164,8 +144,6 @@ steps:
               stepCounter: "206"
             dataType: VARCHAR(40)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: S_ADDRESS
             nullable: false
             sourceColumnReferences:
@@ -178,8 +156,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: S_NATIONKEY
             nullable: false
             sourceColumnReferences:
@@ -192,8 +168,6 @@ steps:
               stepCounter: "206"
             dataType: VARCHAR(15)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: S_PHONE
             nullable: false
             sourceColumnReferences:
@@ -206,8 +180,6 @@ steps:
               stepCounter: "206"
             dataType: NUMBER(12,2)
             description: ""
-            hashColumns: []
-            hashDetails: null
             name: S_ACCTBAL
             nullable: false
             sourceColumnReferences:
@@ -215,6 +187,20 @@ steps:
                   - columnCounter: 3560
                     stepCounter: "205"
                 transform: ""
+          - columnReference:
+              columnCounter: 3629
+              stepCounter: "206"
+            dataType: VARCHAR
+            description: ""
+            name: CUSTOMER_RATING
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: |-
+                  CASE
+                  when "PSTG_SUPPLIER"."S_ACCTBAL" > 0 then 'Good'
+                  else 'Bad'
+                  end
           - acceptedValues:
               strictMatch: true
               values: []
@@ -226,7 +212,6 @@ steps:
             dataType: STRING
             defaultValue: ""
             description: ""
-            hashColumns: []
             hashDetails:
               hashAlgorithm: SHA1
             hashedColumns:
@@ -240,6 +225,22 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences: []
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 3631
+              stepCounter: "206"
+            dataType: VARCHAR(101)
+            description: ""
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3561
+                    stepCounter: "205"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []
