@@ -76,9 +76,7 @@ macros:
           CASE WHEN MOD({{ column }}, 2) = 0 THEN 'EVEN' ELSE 'ODD' END
       {%- endmacro %}
 packages: {}
-projects:
-  "1":
-    name: QA_STEWARTB
+projects: {}
 stepTypes:
   StepType-1:
     id: "1"
