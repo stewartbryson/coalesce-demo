@@ -313,8 +313,7 @@ steps:
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - aliases:
-              VSAT_LINEITEM: "1646"
+          - aliases: {}
             customSQL:
               customSQL: ""
             dependencies:
