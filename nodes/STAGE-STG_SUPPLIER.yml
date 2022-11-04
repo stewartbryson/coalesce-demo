@@ -154,27 +154,6 @@ steps:
                 transform: "{{ even_odd('\"SUPPLIER\".\"S_SUPPKEY\"') }}"
             systemColumnType: None
             transform: ""
-          - acceptedValues:
-              strictMatch: true
-              values: []
-            appliedColumnTests: {}
-            columnReference:
-              columnCounter: 4180
-              stepCounter: "186"
-            config: {}
-            dataType: VARCHAR(10)
-            defaultValue: ""
-            description: ""
-            keyColumnType: None
-            name: P_VALUE
-            nullable: true
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 0
-                    stepCounter: "0"
-                transform: "'{{parameters.accepted_values[0]}}'"
-            systemColumnType: None
-            transform: ""
         cteString: ""
         enabledColumnTestIDs:
           - hasNull
@@ -189,7 +168,11 @@ steps:
               - locationName: SOURCE
                 nodeName: SUPPLIER
             join:
-              joinCondition: "FROM {{ ref('SOURCE', 'SUPPLIER') }} \"SUPPLIER\"\r\nLEFT JOIN {{ ref_no_link('DWH', 'DIM_SUPPLIER') }} \"DIM_SUPPLIER\"\r\nON \"SUPPLIER\".\"S_SUPPKEY\" = \"DIM_SUPPLIER\".\"S_SUPPKEY\"\r\nWHERE \"DIM_SUPPLIER\".\"S_SUPPKEY\" IS NULL\r\n"
+              joinCondition: |
+                FROM {{ ref('SOURCE', 'SUPPLIER') }} "SUPPLIER"
+                LEFT JOIN {{ ref_no_link('DWH', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
+                ON "SUPPLIER"."S_SUPPKEY" = "DIM_SUPPLIER"."S_SUPPKEY"
+                WHERE "DIM_SUPPLIER"."S_SUPPKEY" IS NULL
             name: STG_SUPPLIER
             noLinkRefs:
               - locationName: DWH
