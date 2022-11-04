@@ -16,12 +16,18 @@ locations:
       "5":
         database: DOUG_DB
         schema: QA_DWH
+      "8":
+        database: STEWART_DEV
+        schema: DWH
   SOURCE:
     mappingDefinitions:
       "3":
         database: COALESCE_SAMPLE_DATABASE
         schema: TPCH_SF001
       "5":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
+      "8":
         database: SNOWFLAKE_SAMPLE_DATA
         schema: TPCH_SF1
   SOURCE1:
@@ -32,12 +38,18 @@ locations:
       "5":
         database: SNOWFLAKE_SAMPLE_DATA
         schema: TPCH_SF1
+      "8":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
   SOURCE2:
     mappingDefinitions:
       "3":
         database: COALESCE_SAMPLE_DATABASE
         schema: TPCH_SF001
       "5":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
+      "8":
         database: SNOWFLAKE_SAMPLE_DATA
         schema: TPCH_SF1
   STAGE:
@@ -48,6 +60,9 @@ locations:
       "5":
         database: DOUG_DB
         schema: QA_STG
+      "8":
+        database: STEWART_DEV
+        schema: STAGE
 macros:
   Macro-1:
     id: "1"
