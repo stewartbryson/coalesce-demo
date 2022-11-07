@@ -1,5 +1,12 @@
 defaultStorageMapping: STAGE
-jobs: {}
+jobs:
+  Job-7:
+    excludeSelector: ""
+    id: 7
+    includeSelector: "+{ location: DWH name: VSAT_ORDERS }"
+    name: New Job
+    steps: []
+    subgraphs: []
 locations:
   DWH:
     mappingDefinitions:
@@ -903,6 +910,86 @@ stepTypes:
 
             {% endif %}
     name: Satellite - Effectivity
+    version: 1
+  StepType-13:
+    id: "13"
+    isDisabled: false
+    metadata:
+      defaultStorageLocation: DWH
+      error: null
+      nodeMetadataSpec: |
+        capitalized: Copy of View
+        short: V
+        tagColor: '#C4C4C4'
+        isDisabled: true
+        plural: Views
+
+        config:
+          - groupName: Options
+            items: 
+            - type: materializationSelector
+              options:
+                - view
+              default: view
+              isRequired: true
+
+            - type: toggleButton
+              attributeName: selectDistinct
+              displayName: Distinct
+
+            - type: multisourceToggle
+
+            - type: overrideSQLToggle
+
+            - displayName: Multi Source Strategy
+              attributeName: insertStrategy
+              type: dropdownSelector
+              default: UNION
+              options:
+              - "UNION"
+              - "UNION ALL" 
+              isRequired: true
+              enableIf: "{% if node.isMultisource %} true {% else %} false {% endif %}"
+      templates:
+        create:
+          templateString: |
+            {% if node.override.create.enabled %}
+                
+                {{ node.override.create.script }}
+
+            {% else %}
+                {{ stage('Create View') }}
+                CREATE OR REPLACE VIEW {{ ref_no_link(node.location.name, node.name) }}
+                (
+                    {% for col in columns %}
+                        "{{ col.name }}"
+                        {%- if col.description | length > 0 %} COMMENT '{{ col.description }}'{% endif %}
+                        {%- if not loop.last -%}, {% endif %}
+                    {% endfor %}
+                )
+                {%- if node.description | length > 0 %} COMMENT = '{{ node.description }}'{% endif %}
+                AS
+                {% for source in sources %}
+                    SELECT {% if config.selectDistinct %} DISTINCT {% endif %}
+                    {% for col in source.columns %}
+                        {{ get_source_transform(col) }} AS "{{ col.name }}"
+                        {%- if not loop.last -%}, {% endif %}
+                    {% endfor %}
+
+                    {{ source.join }}
+
+                    {% if not loop.last %}
+                        {% if config.insertStrategy in ['UNION', 'UNION ALL'] %}
+                            {{ config.insertStrategy }}
+                        {% else %}
+                            UNION
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        run:
+          templateString: ""
+    name: Copy of View
     version: 1
   StepType-15:
     id: "15"
@@ -4698,32 +4785,5 @@ stepTypes:
             {% endif %}
     name: Persistent Stage
     version: 1
-subgraphs:
-  Subgraph-36:
-    id: 36
-    name: Dim Part
-    steps:
-      - "1656"
-  Subgraph-37:
-    id: 37
-    name: Dim Customer
-    steps:
-      - "1659"
-  Subgraph-7:
-    id: 7
-    name: Dim Supplier
-    steps:
-      - "45"
-      - "46"
-      - "57"
-      - "150"
-      - "152"
-      - "153"
-      - "270"
-      - "332"
-      - "1532"
-      - "1533"
-      - "1534"
-      - "1604"
-      - "1652"
+subgraphs: {}
 version: 1
